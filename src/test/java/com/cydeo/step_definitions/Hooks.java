@@ -1,8 +1,8 @@
-package com.cydeo.tests.stepDefinition;
+package com.cydeo.step_definitions;
 
-import com.cydeo.tests.utilities.BrowserUtils;
-import com.cydeo.tests.utilities.ConfigurationReader;
-import com.cydeo.tests.utilities.Driver;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

@@ -1,14 +1,13 @@
-package com.cydeo.tests.stepDefinition;
+package com.cydeo.step_definitions;
 
-import com.cydeo.tests.pages.HomePage;
-import com.cydeo.tests.pages.LoginPage;
-import com.cydeo.tests.pages.ProfilePage;
-import com.cydeo.tests.utilities.BrowserUtils;
+import com.cydeo.pages.HomePage;
+import com.cydeo.pages.LoginPage;
+import com.cydeo.pages.ProfilePage;
+import com.cydeo.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +20,7 @@ public class ProfilePageStepDefs {
 
     @When("user clicks profile dropdown")
     public void userClicksProfileDropdown() {
+        BrowserUtils.waitFor(2);
         homePage.userProfile.click();
     }
 
@@ -39,8 +39,9 @@ public class ProfilePageStepDefs {
         loginPage.login(username, password);
     }
 
-    @Then("user should be able to see {int} options under the profile name")
+    @Then("user should be able to see {int} options under the profile name:")
     public void userShouldBeAbleToSeeOptionsUnderTheProfileName(int expectedOptionNumber, List<String> expectedOptions) {
+
         Assert.assertEquals(expectedOptionNumber, homePage.userProfileDropdownOption.size());
 
         Assert.assertEquals(expectedOptions, BrowserUtils.getElementsText(homePage.userProfileDropdownOption));
@@ -60,4 +61,5 @@ public class ProfilePageStepDefs {
         String actualEmail = profilePage.userEmail.getText();
         Assert.assertEquals(expectedEmail, actualEmail);
     }
+
 }

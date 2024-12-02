@@ -1,4 +1,4 @@
-package com.cydeo.tests.runners;
+package com.cydeo.runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

@@ -1,9 +1,8 @@
-package com.cydeo.tests.pages;
+package com.cydeo.pages;
 
-import com.cydeo.tests.utilities.BrowserUtils;
-import com.cydeo.tests.utilities.ConfigurationReader;
-import com.cydeo.tests.utilities.Driver;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.ConfigurationReader;
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,21 +37,20 @@ public class LoginPage {
     public WebElement authorization;
 
 
+    public void login(String userType){
+        String username = ConfigurationReader.getProperty(userType + "_username");
+        String password = ConfigurationReader.getProperty(userType + "_password");
+        inputUsername.sendKeys(username);
+        inputPassword.sendKeys(password);
+        BrowserUtils.sleep(1);
+        submitButton.click();
 
+    }
     public void login(String username, String password){
         inputUsername.sendKeys(username);
         inputPassword.sendKeys(password);
         BrowserUtils.sleep(1);
         submitButton.click();
-    }
-
-    public void login(String userType){
-        String username = ConfigurationReader.getProperty(userType+ "_username");
-        String password = ConfigurationReader.getProperty(userType + "_password");
-        inputUsername.sendKeys(username);
-        inputPassword.sendKeys(password);
-        submitButton.click();
-
     }
 
 }

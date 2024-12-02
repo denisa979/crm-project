@@ -67,7 +67,7 @@ Feature: Activity Stream Message  functionalities.
     Then user should be able to see Send Message area with class name "feed-add-post-micro-title"
     Examples:
       | userType  |
-      | hr             |
+      | hr        |
       | helpdesk  |
       | marketing |
 

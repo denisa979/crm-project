@@ -1,8 +1,8 @@
-package com.cydeo.tests.stepDefinition;
+package com.cydeo.step_definitions;
 
-import com.cydeo.tests.pages.LoginPage;
-import com.cydeo.tests.pages.ProfilePage;
-import com.cydeo.tests.utilities.BrowserUtils;
+import com.cydeo.pages.HomePage;
+import com.cydeo.pages.LoginPage;
+import com.cydeo.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,6 +12,7 @@ public class LoginStepDefs {
     LoginPage loginPage = new LoginPage();
 
 
+
     @Given("user is on the login page")
     public void userIsOnTheLoginPage() {
         System.out.println("DONE IN HOOKS");
@@ -19,7 +20,8 @@ public class LoginStepDefs {
 
     @When("user logs in as {string}")
     public void userLogsInAs(String userType) {
-        loginPage.login(userType);
+        BrowserUtils.waitFor(2);
+      loginPage.login(userType);
     }
 
     @Then("user should be able to see {string} as page title")
@@ -27,8 +29,8 @@ public class LoginStepDefs {
         BrowserUtils.verifyTitleContains(title);
     }
 
-    @When("user logged in withe username as {string} and password as {string}")
-    public void userLoggedInWitheUsernameAsAndPasswordAs(String username, String password) {
+    @When("user log in with incorrect username as {string} and password as {string}")
+    public void userLogInWithIncorrectUsernameAsAndPasswordAs(String username, String password) {
         loginPage.login(username, password);
     }
 
@@ -47,8 +49,9 @@ public class LoginStepDefs {
         loginPage.rememberMe.click();
     }
 
-    @Then("user should be able to see Remember me checkbox clicked")
-    public void userShouldBeAbleToSeeRememberMeCheckboxClicked() {
+    @Then("user should be able to see {string} checkbox clicked")
+    public void userShouldBeAbleToSeeCheckboxClicked(String checkbox) {
+
         Assert.assertTrue(loginPage.rememberMe.isSelected());
     }
 
@@ -56,4 +59,7 @@ public class LoginStepDefs {
     public void userShouldBeAbleToSeePasswordIsInBulletSignsByDefault() {
         Assert.assertEquals("password", BrowserUtils.getAttributeValue(loginPage.inputPassword, "type"));
     }
+
+
+
 }

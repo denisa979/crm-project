@@ -1,4 +1,4 @@
-package com.cydeo.tests.pages;
+package com.cydeo.pages;
 
 public class HomePage extends BasePage{
 }

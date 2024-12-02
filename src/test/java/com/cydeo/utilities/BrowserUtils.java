@@ -1,4 +1,4 @@
-package com.cydeo.tests.utilities;
+package com.cydeo.utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
@@ -84,17 +84,11 @@ public class BrowserUtils {
             }
         }
     }
-    /**
-     *  This method will accept String as expected value and verify actual URL contains value
-     *     @param expectedURL
-     */
+    ///  This method will accept String as expected value and verify actual URL contains value
     public static void verifyURLContains(String expectedURL){
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains(expectedURL));
     }
-    /**
-     * Switches to new window by the exact title. Returns to original window if target title not found
-     * @param targetTitle
-     */
+    /// Switches to new window by the exact title. Returns to original window if target title not found
     public static void switchToWindow(String targetTitle){
         String origin = Driver.getDriver().getWindowHandle();
         for(String handle : Driver.getDriver().getWindowHandles()){

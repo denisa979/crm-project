@@ -14,7 +14,7 @@ Feature: Functions on Company Structure under Employee menu.
       | marketing | Company Structure |
 
 
-  @wip
+
   Scenario: Verify that the HR user can add a department from the Company Structure.
     When user logs in as "hr"
     And user clicks "Employees"

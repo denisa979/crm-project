@@ -1,4 +1,4 @@
-package com.cydeo.tests.utilities;
+package com.cydeo.utilities;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.WebElement;

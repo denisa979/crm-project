@@ -1,7 +1,7 @@
-package com.cydeo.tests.pages;
+package com.cydeo.pages;
 
-import com.cydeo.tests.utilities.BrowserUtils;
-import com.cydeo.tests.utilities.Driver;
+import com.cydeo.utilities.BrowserUtils;
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,9 +9,9 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static com.cydeo.tests.utilities.BrowserUtils.switchToDefaultContent;
-import static com.cydeo.tests.utilities.BrowserUtils.switchToFrame;
-import static com.cydeo.tests.utilities.CrmUtils.getFakeMessage;
+import static com.cydeo.utilities.BrowserUtils.switchToDefaultContent;
+import static com.cydeo.utilities.BrowserUtils.switchToFrame;
+import static com.cydeo.utilities.CrmUtils.getFakeMessage;
 
 public class ActivityStreamPage extends BasePage {
 
